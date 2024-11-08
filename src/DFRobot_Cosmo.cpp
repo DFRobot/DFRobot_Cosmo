@@ -107,10 +107,6 @@ void DFRobot_Cosmo::lineTraking(eTrakingTurn_t cmd)
     I2CWirte(LINE_WALKING ,0x00);
 }
 
-void DFRobot_Cosmo::lineSpeed(uint8_t grade)
-{
-  I2CWirte(LINE_SPEED_GRADE ,grade);
-}
 
 uint8_t DFRobot_Cosmo::getCross(void)
 {
@@ -285,10 +281,10 @@ void DFRobot_Cosmo::motorSet(eMotorSelect_t motor,eDirection_t Dir,uint8_t speed
     if (motor==eMotorLeft){
       I2CWirte(MOTOR_0,Dir);
       I2CWirte(SPEED_0,speed);
-    }else if (motor==eMotoRight){
+    }else if (motor==eMotorRight){
       I2CWirte(MOTOR_1,Dir);
       I2CWirte(SPEED_1,speed);
-    }else if(motor==eMotoAll){
+    }else if(motor==eMotorAll){
       I2CWirte(MOTOR_1,Dir);
       I2CWirte(SPEED_1,speed);
       I2CWirte(MOTOR_0,Dir);
@@ -300,9 +296,9 @@ void DFRobot_Cosmo::motorStop(eMotorSelect_t motor)
 {
     if (motor==eMotorLeft){
       I2CWirte(SPEED_0,0);
-    }else if (motor==eMotoRight){   
+    }else if (motor==eMotorRight){   
       I2CWirte(SPEED_1,0);
-    }else if(motor==eMotoAll){
+    }else if(motor==eMotorAll){
       I2CWirte(SPEED_0,0);
       I2CWirte(SPEED_1,0);
     }
@@ -323,26 +319,26 @@ void DFRobot_Cosmo::BLEDefaultCmd(uint8_t cmd)
   static uint8_t servoNum4=20;
   switch (cmd) {
     case eBleForward:
-      motorSet(eMotoAll,eMotorForward,200);
+      motorSet(eMotorAll,eMotorForward,200);
       delay(100);
-      motorSet(eMotoAll,eMotorForward,0);
+      motorSet(eMotorAll,eMotorForward,0);
       break;
     case eBleBackward:
-      motorSet(eMotoAll,eMotorReverse,200);
+      motorSet(eMotorAll,eMotorReverse,200);
       delay(100);
-      motorSet(eMotoAll,eMotorReverse,0);
+      motorSet(eMotorAll,eMotorReverse,0);
       break;
     case eBleLeft:
-      motorSet(eMotoRight,eMotorForward,200);
+      motorSet(eMotorRight,eMotorForward,200);
       motorSet(eMotorLeft,eMotorForward,0);
       delay(100);
-      motorSet(eMotoAll,eMotorForward,0);
+      motorSet(eMotorAll,eMotorForward,0);
       break;
     case eBleRight:
       motorSet(eMotorLeft,eMotorForward,200);
-      motorSet(eMotoRight,eMotorForward,0);
+      motorSet(eMotorRight,eMotorForward,0);
       delay(100);
-      motorSet(eMotoAll,eMotorForward,0);
+      motorSet(eMotorAll,eMotorForward,0);
       break;
     case eBleRgbR:
       rgbSet(eRgbAll,eRgbRed);

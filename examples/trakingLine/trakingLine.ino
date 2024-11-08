@@ -18,7 +18,6 @@ void setup() {
   myCosmo.begin();
   myCosmo.getVersion();
   myCosmo.motorTypeSet(266);//Select motor type：266 rpm
-  myCosmo.lineSpeed(3);//speed
   myCosmo.lineTraking(eTrakingOn);//Start of patrol
 }
  
@@ -28,7 +27,7 @@ void loop() {
   #ifdef JUDEGE_CROSS
   state=myCosmo.getCross();
   if(state==eStateCrossing ){
-    myCosmo.setCross((eCross_t )state,eTurnLeft); 
+    myCosmo.setCross((eCross_t )state,eTurnRight); 
   }else if(state==eStateLeftRight){
     myCosmo.setCross((eCross_t )state,eTurnLeft);
   }else if(state==eStateLeftStright){

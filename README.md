@@ -182,13 +182,7 @@ void rgbBlink(eRgbSelect_t rgb,uint8_t num,uint8_t Grade,eRgbCmd_t cmd);
    * @return 
    */
   void lineTraking(eTrakingTurn_t cmd);
-  /**
-   * @fn lineSpeed
-   * @brief Set speed of line patrol 
-   * @param grade  grade of speed:1-5
-   * @return 
-   */
-  void lineSpeed(uint8_t grade);
+
   /**
    * @fn BleCmdDefault
    * @brief Restore the default Settings of the Bluetooth command
@@ -243,7 +237,7 @@ void rgbBlink(eRgbSelect_t rgb,uint8_t num,uint8_t Grade,eRgbCmd_t cmd);
   /**
    * @fn motorSet
    * @brief Setting motor parameters 
-   * @param motor  Left motor: eMotorLeft, Right motor: eMotoRight All:eMotoAll
+   * @param motor  Left motor: eMotorLeft, Right motor: eMotorRight All:eMotorAll
    * @param Dir  Forward turning: eMotorForward backward turning:eMotorReverse
    * @param speed  0-255
    * @return 
@@ -252,7 +246,7 @@ void rgbBlink(eRgbSelect_t rgb,uint8_t num,uint8_t Grade,eRgbCmd_t cmd);
   /**
    * @fn motorStop
    * @brief Stop motor operation
-   * @param motor   Left motor: eMotorLeft, Right motor: eMotoRight All:eMotoAll
+   * @param motor   Left motor: eMotorLeft, Right motor: eMotorRight All:eMotorAll
    * @return 
    */
   void motorStop(eMotorSelect_t motor);

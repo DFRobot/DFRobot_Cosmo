@@ -18,13 +18,13 @@ void setup() {
  
 void loop() {
   myCosmo.motorSet(eMotorLeft,eMotorForward,100);
-  myCosmo.motorSet(eMotoRight,eMotorForward,100);
+  myCosmo.motorSet(eMotorRight,eMotorForward,100);
   delay(1000);
-  myCosmo.motorSet(eMotoAll,eMotorForward,0);
+  myCosmo.motorSet(eMotorAll,eMotorForward,0);
   delay(100);
   myCosmo.motorSet(eMotorLeft,eMotorForward,100);
-  myCosmo.motorSet(eMotoRight,eMotorReverse,100);
+  myCosmo.motorSet(eMotorRight,eMotorReverse,100);
   delay(300);
-  myCosmo.motorSet(eMotoAll,eMotorForward,0);
+  myCosmo.motorSet(eMotorAll,eMotorForward,0);
   delay(100);
 }

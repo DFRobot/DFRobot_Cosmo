@@ -184,13 +184,7 @@ void rgbBlink(eRgbSelect_t rgb,uint8_t num,uint8_t Grade,eRgbCmd_t cmd);
    * @return 
    */
   void lineTraking(eTrakingTurn_t cmd);
-  /**
-   * @fn LineSpeed
-   * @brief 设置巡线的速度
-   * @param grade  速度等级:1-5
-   * @return 
-   */
-  void lineSpeed(uint8_t grade);
+
   /**
    * @fn BleCmdDefault
    * @brief 恢复蓝牙命令的默认设置,命名和id绑定如下：
@@ -244,7 +238,7 @@ void rgbBlink(eRgbSelect_t rgb,uint8_t num,uint8_t Grade,eRgbCmd_t cmd);
   /**
    * @fn motorSet
    * @brief 设置电机参数
-   * @param motor 左电机: eMotorLeft, 右电机: eMotoRight 全部:eMotoAll
+   * @param motor 左电机: eMotorLeft, 右电机: eMotorRight 全部:eMotorAll
    * @param Dir  正转: eMotorForward  反转:eMotorReverse
    * @param speed 速度  0-255
    * @return 
@@ -253,7 +247,7 @@ void rgbBlink(eRgbSelect_t rgb,uint8_t num,uint8_t Grade,eRgbCmd_t cmd);
   /**
    * @fn motorStop
    * @brief 停止电机运行
-   * @param motor  左电机: eMotorLeft, 右电机: eMotoRight 全部:eMotoAll
+   * @param motor  左电机: eMotorLeft, 右电机: eMotorRight 全部:eMotorAll
    * @return 
    */
   void motorStop(eMotorSelect_t motor);

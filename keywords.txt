@@ -94,8 +94,8 @@ eRgbLeft	LITERAL1
 eRgbRight	LITERAL1	 
 eRgbAll	LITERAL1
 eMotorLeft	LITERAL1
-eMotoRight	LITERAL1
-eMotoAll	LITERAL1
+eMotorRight	LITERAL1
+eMotorAll	LITERAL1
 eBlinkOn	LITERAL1
 eBlinkOff	LITERAL1
 eMotorOn	LITERAL1
