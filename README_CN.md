@@ -184,41 +184,6 @@ void rgbBlink(eRgbSelect_t rgb,uint8_t num,uint8_t Grade,eRgbCmd_t cmd);
    * @return 
    */
   void lineTraking(eTrakingTurn_t cmd);
-
-  /**
-   * @fn BleCmdDefault
-   * @brief 恢复蓝牙命令的默认设置,命名和id绑定如下：
-   * @n eBleForward =  1     
-   * @n eBleBackward = 2    
-   * @n eBleLeft = 3,           
-   * @n eBleRight =  4         
-   * @n eBleRgbR = 5         
-   * @n eBleRgbG = 6         
-   * @n eBleRgbB = 7         
-   * @n eBleRgbRB = 8         
-   * @n eBleRgbRG = 9         
-   * @n eBleRgbGB =10        
-   * @n eBleRgbRGB = 11       
-   * @n eBleRgbOff = 12       
-   * @n eBleServo1Right = 13   
-   * @n eBleServo1Left= 14   
-   * @n eBleServo2Right = 15  
-   * @n eBleServo2Left  = 16 
-   * @n eBleServo3Right =  17  
-   * @n eBleServo3Left =18    
-   * @n eBleServo4Right = 19   
-   * @n eBleServo4Left = 20  
-
-   * @param cmd  Received Bluetooth command
-   * @return 
-   */
-  void BleCmdDefault(uint8_t cmd);
-  /**
-   * @fn BleGetCmd
-   * @brief 获取蓝牙命令
-   * @return 0-255
-   */
-  uint8_t BleGetCmd(void);
    /**
    * @fn getCross
    * @brief 获取路口类型

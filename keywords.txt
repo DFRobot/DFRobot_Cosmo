@@ -36,6 +36,7 @@ lineTraking	KEYWORD2
 lineSpeed	KEYWORD2
 BLEDefaultCmd	KEYWORD2
 BLEGetCmd	KEYWORD2
+BLEModule	KEYWORD2
 getCross	KEYWORD2
 setCross	KEYWORD2
 motorSet	KEYWORD2
@@ -163,3 +164,4 @@ eBlinkTurn_t	LITERAL1
 eMotorTurn_t	LITERAL1
 eTrakingTurn_t	LITERAL1
 eLightSelect_t	LITERAL1
+eBLEModule_t	LITERAL1

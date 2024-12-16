@@ -10,6 +10,8 @@
  */
 #include "DFRobot_Cosmo.h"
 
+
+
 DFRobot_Cosmo::DFRobot_Cosmo()
 {
    
@@ -310,7 +312,11 @@ void DFRobot_Cosmo::motorTypeSet(uint16_t type)
   I2CWirte(MOTOR_TYPE_L,(uint8_t)type);
 }
 
-
+#ifdef BLE_EN
+void  DFRobot_Cosmo::BLEModule(eBLEModule_t cmd)
+{
+  I2CWirte(BLEMODULE ,cmd);
+}
 void DFRobot_Cosmo::BLEDefaultCmd(uint8_t cmd)
 {
   static uint8_t servoNum1=20;
@@ -405,7 +411,7 @@ void DFRobot_Cosmo::BLEDefaultCmd(uint8_t cmd)
     I2CRead(BLECMD ,&rxbuf[BLECMD],1);
     return rxbuf[BLECMD];
  }
-
+#endif
 // Function that drives the passive buzzer
 void DFRobot_Cosmo::tone(u8 tonePin, int frequency, int duration) {
   pinMode(tonePin, OUTPUT);            //init

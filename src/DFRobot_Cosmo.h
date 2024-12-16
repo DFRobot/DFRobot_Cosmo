@@ -7,8 +7,20 @@
 #include "Cosmo_Ws2812/Cosmo_Ws2812.h"
 #include "Cosmo_IRremote/Cosmo_IRremote.h"
 
+
+// #define BLE_EN //enable BLE 
+
 #define COSMO_BEEP_PIN 11
 #define COSMO_LED_PIN  13
+
+/**
+ * @enum eBLEModule_t
+ * @brief module on or off
+ */
+typedef enum {
+  eenable =1,       /**< enable */ 
+  edisable =0,       /**< disable*/
+}eBLEModule_t;
 /**
  * @enum eCross_t
  * @brief Crossing
@@ -221,6 +233,7 @@ public:
   #define         T2_DEFAULT                  77
   #define         T3_DEFAULT                  78
   #define         BLECMD                      80
+  #define         BLEMODULE                       81  
    /**
    * @fn begin
    * @brief subclass initialization function
@@ -375,6 +388,13 @@ public:
    */
   void lineTraking(eTrakingTurn_t cmd);
   /**
+   * @fn BLEModule
+   * @brief Enable or disable the Bluetooth module
+   * @n 0:disable 1:enable
+   */
+  #ifdef BLE_EN
+  void BLEModule(eBLEModule_t cmd);
+  /**
    * @fn BLEDefaultCmd
    * @brief Restore the default Settings of the Bluetooth command
    * @param cmd  Received Bluetooth command
@@ -393,6 +413,7 @@ public:
    * @return type of Cross road
    * @retval 1：eStateCrossing    2：eStateLeftRight   3：eStateLeftStright   4：eStateRightStright
    */
+  #endif
   uint8_t getCross(void);
   /**
    * @fn setCross

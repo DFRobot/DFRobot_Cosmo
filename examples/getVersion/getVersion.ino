@@ -10,7 +10,7 @@
  */
 #include <DFRobot_Cosmo.h>
 DFRobot_Cosmo myCosmo;
-
+//Baud rate:115200
 
 void setup() {
   myCosmo.begin();
